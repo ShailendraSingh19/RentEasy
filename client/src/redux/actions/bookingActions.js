@@ -4,7 +4,7 @@ export const bookCar = (reqObj) => async (dispatch) => {
   dispatch({ type: "LOADING", payload: true });
 
   try {
-     await axios.post("https://renteasy-23qt.onrender.com/api/bookings/bookcar" , reqObj);
+     await axios.post("https://renteasy-khho.onrender.com/api/bookings/bookcar" , reqObj);
 
     dispatch({ type: "LOADING", payload: false });
     message.success("Your bike was booked successfully");
@@ -25,11 +25,7 @@ export const getAllBookings=()=>async dispatch=>{
   dispatch({type: 'LOADING' , payload:true})
 
   try {
-<<<<<<< HEAD
-      const response = await axios.get('http://localhost:5000/api/bookings/getallbookings')
-=======
-      const response = await axios.get('https://renteasy-23qt.onrender.com/api/bookings/getallbookings')
->>>>>>> 408a58c2292f0fe19dff75dd038f4993860c3534
+      const response = await axios.get('https://renteasy-khho.onrender.com/api/bookings/getallbookings')
       dispatch({type: 'GET_ALL_BOOKINGS', payload:response.data})
       dispatch({type: 'LOADING' , payload:false})
   } catch (error) {
