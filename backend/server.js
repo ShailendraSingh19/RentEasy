@@ -1,8 +1,11 @@
 const express = require('express')
+const cors = require('cors'); // Import the cors package
+
 const app = express()
 const port = 5000
 const dbConnection = require('./db')
 app.use(express.json())
+app.use(cors());
 
 app.use('/api/cars/' , require('./routes/bikesRoute'))
 app.use('/api/users/' , require('./routes/usersRoute'))
