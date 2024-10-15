@@ -6,7 +6,11 @@ export const getAllCars=()=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
+<<<<<<< HEAD
         const response = await axios.get('http://localhost:5000/api/cars/getallcars')
+=======
+        const response = await axios.get('https://renteasy-23qt.onrender.com/api/cars/getallcars')
+>>>>>>> 408a58c2292f0fe19dff75dd038f4993860c3534
         dispatch({type: 'GET_ALL_CARS', payload:response.data})
         dispatch({type: 'LOADING' , payload:false})
     } catch (error) {
@@ -21,7 +25,7 @@ export const addCar=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-         await axios.post('/api/cars/addcar' , reqObj)
+         await axios.post('https://renteasy-23qt.onrender.com/api/cars/addcar' , reqObj)
        
          dispatch({type: 'LOADING' , payload:false})
          message.success('New bike added successfully')
@@ -41,7 +45,7 @@ export const editCar=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-         await axios.post('/api/cars/editcar' , reqObj)
+         await axios.post('https://renteasy-23qt.onrender.com/api/cars/editcar' , reqObj)
        
          dispatch({type: 'LOADING' , payload:false})
          message.success('Bike details updated successfully')
@@ -61,7 +65,7 @@ export const deleteCar=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-         await axios.delete('/api/cars/deletecar/'+reqObj.carid)
+         await axios.delete('https://renteasy-23qt.onrender.com/api/cars/deletecar/'+reqObj.carid)
        
          dispatch({type: 'LOADING' , payload:false})
          message.success('Bike deleted successfully')
