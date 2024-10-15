@@ -6,11 +6,7 @@ export const userLogin=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-<<<<<<< HEAD
-        const response = await axios.post('http://localhost:5000/api/users/login' , reqObj)
-=======
-        const response = await axios.post('https://renteasy-23qt.onrender.com/api/users/login' , reqObj)
->>>>>>> 408a58c2292f0fe19dff75dd038f4993860c3534
+        const response = await axios.post('https://renteasy-khho.onrender.com/api/users/login' , reqObj)
         localStorage.setItem('user' , JSON.stringify(response.data))
         message.success('Login success')
         dispatch({type: 'LOADING' , payload:false})
@@ -30,7 +26,7 @@ export const userRegister=(reqObj)=>async dispatch=>{
     dispatch({type: 'LOADING' , payload:true})
 
     try {
-        const response = await axios.post('https://renteasy-23qt.onrender.com/api/users/register' , reqObj)
+        const response = await axios.post('https://renteasy-khho.onrender.com/api/users/register' , reqObj)
         message.success('Registration successfull')
         setTimeout(() => {
             window.location.href='/login'
